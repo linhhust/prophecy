@@ -450,4 +450,11 @@ Modal CSS
 }
 .vehicles-area{
     padding: 2rem 0 2rem;
+    background-color: rgb(25, 44, 56);
 }
+
+.nav-area .main-menu {
+    background-color: rgb(25, 44, 56);   
+    /*color: white!important;*/
+}
+

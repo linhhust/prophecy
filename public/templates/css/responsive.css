@@ -538,7 +538,8 @@
     }
 
     .slicknav_menu .slicknav_icon-bar {
-        background-color: #000;
+        /*background-color: #000;*/
+        background-color: white;
         width: 30px;
         height: 2px;
         margin-bottom: 8px;

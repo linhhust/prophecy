@@ -6,6 +6,7 @@ use App\Deposit;
 use App\GeneralSettings;
 use App\Http\Controllers\Gateway\PaymentController;
 use App\Http\Controllers\Controller;
+use Log;
 
 class ProcessController extends Controller
 {
@@ -51,11 +52,12 @@ class ProcessController extends Controller
             $get_magic_quotes_exists = true;
         }
         foreach ($myPost as $key => $value) {
-            if ($get_magic_quotes_exists == true && get_magic_quotes_gpc() == 1) {
-                $value = urlencode(stripslashes($value));
-            } else {
-                $value = urlencode($value);
-            }
+            // if ($get_magic_quotes_exists == true && get_magic_quotes_gpc() == 1) {
+            //     $value = urlencode(stripslashes($value));
+            // } else {
+            //     $value = urlencode($value);
+            // }
+            $value = urlencode(stripslashes($value));
             $req .= "&$key=$value";
         }
 
@@ -63,13 +65,14 @@ class ProcessController extends Controller
         $paypalURL = "https://ipnpb.paypal.com/cgi-bin/webscr?";
         $callUrl = $paypalURL . $req;
         $verify = curlContent($callUrl);
+        Log::info($verify);
         if ($verify == "VERIFIED") {
             //PAYPAL VERIFIED THE PAYMENT
             $receiver_email = $_POST['receiver_email'];
             $mc_currency = $_POST['mc_currency'];
             $mc_gross = $_POST['mc_gross'];
             $track = $_POST['custom'];
-
+            Log::info('ipn paypal: ' . $track);
             //GRAB DATA FROM DATABASE!!
             $data = Deposit::where('trx', $track)->orderBy('id', 'DESC')->first();
 
