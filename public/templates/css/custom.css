@@ -199,18 +199,18 @@
     top: 3px;
     bottom: 3px;
     left: 0;
-    border-left: 4px solid #130e3e;
+    border-left: 4px solid #2ecc71;
     pointer-events: auto;
 }
 .heading-component-inner>* {
     margin-bottom: 11px;
-    color: #130e3e;
+    color: white;
 }
 .heading-component+.sport-table-header {
     margin-top: 30px;
 }
 .sport-table {
-    background-color: #fff;
+    background-color: #213743;
 }
 .sport-table-header {
     padding: 12px 23px 8px 23px;
@@ -219,11 +219,11 @@
     letter-spacing: 0.1em;
     text-transform: uppercase;
     color: #fff;
-    background-color: #130e3e;
+    background-color: #071824;
 }
 
 .site-color {
-    color: #2ecc71;
+    color: white;
 }
 .sport-table-title {
     border-right: 1px solid #e1e1e1;
@@ -243,9 +243,10 @@
 }
 .sport-table-tr {
     padding: 11px 15px;
-    border-left: 1px solid #e1e1e1;
+    color: white;
+    /*border-left: 1px solid #e1e1e1;
     border-right: 1px solid #e1e1e1;
-    border-bottom: 1px solid #e1e1e1;
+    border-bottom: 1px solid #e1e1e1;*/
 }
 @media (min-width: 992px) {
     .sport-table-tr {
@@ -269,7 +270,7 @@
     font-weight: 600;
     letter-spacing: 0.05em;
     text-transform: uppercase;
-    color: #151515;
+    color: white;
 }
 @media (min-width: 992px) {
     .sport-table-wager {
@@ -314,7 +315,7 @@
     color: #fff;
 }
 .sport-table-wager-button a:hover {
-    background: #2ecc71;
+    background: rgb(0, 37, 77);
     color: #fff;
 }
 .sport-table-wager-button span {
@@ -415,8 +416,10 @@ Modal CSS
     letter-spacing: 0.025em;
     text-align: center;
     margin: 0px 1px;
-    background: #130e3e;
-    color: #fff;
+    background: #071824;
+    /*color: rgb(85, 112, 134);*/
+    color: white;
+    font-weight: bold;
 }
 .sport-table-wager {
     /*flex-wrap: wrap;*/
@@ -454,7 +457,7 @@ Modal CSS
 }
 
 .nav-area .main-menu {
-    background-color: rgb(25, 44, 56);   
+    /*background-color: rgb(25, 44, 56);   */
     /*color: white!important;*/
 }
 

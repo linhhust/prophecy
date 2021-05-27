@@ -57,6 +57,10 @@
                             @foreach($questions as $question)
                                 @php
                                     $betOptions = App\BetOption::with('match','question')->whereQuestion_id($question->id)->whereStatus(1)->latest()->get();
+                                    if (count($betOptions)>0)
+                                        $width = floor(100/count($betOptions));
+                                    else
+                                        $width = 1;
                                 @endphp
                                 @if(count($betOptions)>0)
                                     <div class="sport-table">
@@ -78,7 +82,7 @@
                                                 <div class="col-sm-10 col-md-6 col-lg-7">
                                                     <div class="sport-table-wager">
                                                         @foreach($betOptions as $data)
-                                                            <div class="progress-button-item sport-table-wager-button m-0">
+                                                            <div class="progress-button-item sport-table-wager-button m-0 bet_option_{{$data->id}}" style="width: {{$width}}%">
                                                                 <a class="bet_button text-decoration-none"
                                                                    href="#0"
                                                                    data-toggle="modal" data-target="#sportModal"
@@ -92,7 +96,7 @@
                                                                    data-betlimit="{{$data->bet_limit}}"
                                                                    data-questionid="{{$question->id}}"
                                                                    data-wager-count="{{$data->ratio1}} : {{$data->ratio2}}">
-                                                                    <span>{{$data->option_name}}</span>
+                                                                    <span class="option-name">{{$data->option_name}}</span>
                                                                     <span class="sport-table-wager-button-count">{{$data->ratio1}}
                                                                         : {{$data->ratio2}}</span>
                                                                 </a>
