@@ -15,7 +15,7 @@
             <div class="col-lg-12">
                 <div class="accordion" id="accordionExample1">
                     @foreach($faqs as $k => $data)
-                    <div class="card border-1p">
+                    <div class="card">
                         <div class="card-header" id="heading{{$data->id}}">
                             <h2 class="mb-0">
                                 <button class="btn btn-link @if($k == 0) collapsed @endif btn-block text-left" type="button" data-toggle="collapse" data-target="#collapse{{$data->id}}" aria-expanded="true" aria-controls="collapse{{$data->id}}">

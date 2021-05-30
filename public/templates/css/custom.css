@@ -595,7 +595,7 @@ svg:not(:root) {
     border-radius: 3px;
     padding: 0px 0.25rem;
     font-feature-settings: "tnum";
-    font-size: 0.875rem;
+    font-size: 0.6rem;
     background: rgb(254, 34, 71);
     color: rgb(255, 255, 255);
     text-transform: none;

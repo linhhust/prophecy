@@ -1054,11 +1054,11 @@
     }
 
     .blog-lists .single-blog .blog-txt h3.blog-title a {
-        color: #333333;
+        color: white;
     }
 
     .blog-lists .single-blog .blog-txt p.date {
-        color: #333333;
+        color: white;
         opacity: .7;
     }
 
