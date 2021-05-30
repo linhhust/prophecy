@@ -27,7 +27,7 @@
     <script src="https://js.pusher.com/7.0/pusher.min.js"></script>
 </head>
 
-<body>
+<body style="background-color: #0F212E;">
 
 
 <!--  Header Section Start  -->
@@ -64,14 +64,14 @@
                             <ul class="menus" id="mainMenu">
                                 <li @if(Request::routeIs('site')) class="active" @endif><a href="{{route('site')}}" class="parent-link">@lang('Home')</a></li>
 
-                                <li class="dropdown">
+                                {{-- <li class="dropdown">
                                     <a href="javascript:void(0)" class="parent-link">@lang('Tournament')</a>
                                     <ul class="dropdown-lists">
                                         @foreach($tournaments as $event)
                                         <li><a href="{{route('tournament',[str_slug($event->name),$event->id])}}">{{$event->name}}</a></li>
                                         @endforeach
                                     </ul>
-                                </li>
+                                </li> --}}
 
 
                                 <li @if(Request::routeIs('about')) class="active" @endif><a href="{{route('about')}}" class="parent-link">@lang('About Us')</a></li>
@@ -121,8 +121,8 @@
 </div>
 <!--  Header Section End  -->
 
-
 @yield('content')
+
 @include('partials.footer')
 
 <!-- back to top area start -->

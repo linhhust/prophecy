@@ -26,7 +26,9 @@ class WebsiteController extends Controller
         $now = Carbon::now();
         $data['page_title'] = "Home";
         $data['sliders'] = Slider::latest()->get();
-        $data['matches'] = Match::with('event')->whereStatus(1)->where('status', '!=' ,2)->where('end_date','>', $now)->orderBy('start_date','asc')->limit(10)->get();
+        $data['matches'] = Match::with('event')->whereStatus(1)->where('status', '!=' ,2)->where('end_date','>', $now)->orderBy('start_date','asc')->where('event_id',function($query){
+               $query->select('id')->from('events')->orderBy('id', 'asc')->first();
+            })->limit(10)->get();
 
         $data['users'] = User::count();
         $data['totalPrediction'] = BetInvest::count();

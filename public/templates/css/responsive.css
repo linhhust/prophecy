@@ -554,7 +554,7 @@
         left: 0px;
         top: 89px;
         width: 100%;
-        background-color: #183650;
+        background:rgb(25, 44, 56);
         z-index: 10;
     }
 
@@ -563,11 +563,11 @@
     }
 
     .slicknav_nav li {
-        background-color: #333333;
+        background:rgb(25, 44, 56);
     }
 
     .slicknav_nav ul.dropdown-lists li a {
-        background-color: #373737;
+        background-color: rgb(25, 44, 56);
         padding: 10px 30px;
     }
 

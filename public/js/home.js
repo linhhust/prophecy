@@ -26,3 +26,10 @@ function percent(num_amount, num_total) {
         return 0; // or whatever you want
     }
 }
+
+$(document).ready(function(){
+    $('.total-question').click(function(){
+        $(this).parent().parent().parent().find('.all-item').show();
+        $(this).text('');
+    });
+});

@@ -2,7 +2,7 @@
     flex: 0 0 auto;
     display: flex;
     align-items: center;
-    background-color: #fff;
+    background-color: rgb(25, 44, 56);
     border-radius: 5px;
     font-size: 30px;
     margin: 10px 0px 10px 0px;
@@ -15,7 +15,7 @@
     color: #333C48;
     text-align: center;
     overflow: hidden;
-    border: 1px solid #130e3e;
+    border: 1px solid #071824;
 }
 .ctrl__counter.is-input .ctrl__counter-num {
     visability: hidden;
@@ -45,6 +45,7 @@
     opacity: 1;
     top: -20px;
     transition: opacity 100ms ease-in;
+    background-color: white;
 }
 .ctrl__counter-num {
     position: absolute;
@@ -92,15 +93,15 @@
     text-align: center;
     color: #fff;
     cursor: pointer;
-    background-color: #130e3e;
+    background-color: #071824;
     transition: background-color 100ms ease-in;
 }
 .ctrl__button:hover {
-    background-color: #130e3e;
+    background-color: #071824;
     transition: background-color 100ms ease-in;
 }
 .ctrl__button:active {
-    background-color: #130e3e;
+    background-color: #071824;
     transition: background-color 100ms ease-in;
 }
 .ctrl__button--decrement {
@@ -190,7 +191,7 @@
     display: inline-block;
     padding-left: 15px;
     line-height: 26px;
-    color: #130e3e;
+    color: #071824;
     font-size: 1rem;
 }
 .heading-component-title::before {
@@ -223,7 +224,8 @@
 }
 
 .site-color {
-    color: white;
+    color: rgb(177, 186, 211);
+    font-weight: 100;
 }
 .sport-table-title {
     border-right: 1px solid #e1e1e1;
@@ -244,10 +246,8 @@
 .sport-table-tr {
     padding: 11px 15px;
     color: white;
-    /*border-left: 1px solid #e1e1e1;
-    border-right: 1px solid #e1e1e1;
-    border-bottom: 1px solid #e1e1e1;*/
 }
+
 @media (min-width: 992px) {
     .sport-table-tr {
         padding-left: 0;
@@ -259,6 +259,7 @@
         text-transform: uppercase;
         display: flex;
         flex-direction: column;
+        font-weight: bold;
     }
     .sport-table-header p .countdown{
         text-align: right;
@@ -311,7 +312,7 @@
     letter-spacing: 0.025em;
     text-align: center;
     margin: 0px 1px;
-    background: #130e3e;
+    background: #071824;
     color: #fff;
 }
 .sport-table-wager-button a:hover {
@@ -324,7 +325,8 @@
 }
 .sport-table-wager-button-count {
     font-family: "Kanit", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    font-weight: 600;
+    font-weight: 800;
+    color: rgb(0,33,255)
 }
 @media (min-width: 768px) {
     .sport-table-title {
@@ -341,7 +343,7 @@ Modal CSS
  */
 
 .modal-sport .modal-header {
-    background-color: #130e3e;
+    background-color: #0F212E;
     color: #fff;
     border: 0;
     border-radius: 0;
@@ -365,6 +367,7 @@ Modal CSS
     border: none;
     border-radius: 0;
     box-shadow: none;
+    background-color: rgb(25, 44, 56);
 }
 .modal-sport-confrontation, .modal-sport-wager-title {
     font-size: 14px;
@@ -385,6 +388,7 @@ Modal CSS
 .modal-sport-live {
     margin-top: 5px;
     letter-spacing: 0.05em;
+    color: white;
 }
 .modal-sport .modal-footer {
     padding: 22px 30px;
@@ -461,3 +465,118 @@ Modal CSS
     /*color: white!important;*/
 }
 
+.button-content {
+    display: flex;
+    flex-direction: column;
+    -webkit-box-align: center;
+    align-items: center;
+    padding: 0rem 1.3rem 0px 0rem;
+}
+.icon-wrapper {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    position: relative;
+}
+svg:not(:root) {
+    overflow: hidden;
+}
+
+.eiogy {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    stroke-width: 0;
+    stroke: currentcolor;
+    fill: currentcolor;
+}
+.csAgNu {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    transform: translate(50%, -35%);
+    font-size: 0.875rem;
+    color: rgb(255, 255, 255);
+}
+.iUVkfr {
+    font-weight: 600;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    font-feature-settings: "tnum";
+    font-size: 0.875rem;
+    display: inline-flex;
+    padding: 0px 0.5rem;
+    min-width: 1.6em;
+    height: 1.6em;
+    border-radius: 0.8em;
+    color: rgb(177, 186, 211);
+    background: rgb(7, 15, 36);
+}
+.eageCH {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    max-width: 10ch;
+}
+.jiKQsf {
+    width: 6ch;
+    font-size: 0.875rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+}
+
+.gjBbTt {
+    color: rgb(255, 255, 255);
+    display: flex;
+    background: #071824;
+    /*border-radius: 0.5rem;*/
+    padding: 1rem 1.5rem;
+    /*width: 690px;*/
+    overflow: auto hidden;
+    transform: translate3d(0px, 0px, 0px);
+    /*margin:0px 32px;*/
+}
+
+.button-content:hover {
+     color: rgb(255, 255, 255); 
+}
+.gjBbTt > button, .gjBbTt a {
+    position: relative;
+    padding-top: 0.75rem;
+    color: rgb(85, 112, 134);
+    transition: all 300ms ease 0s;
+}
+
+.active {
+    color: white;
+    font-weight: bold;
+}
+
+.active .iUVkfr {
+    background: rgb(31, 139, 255);
+    color: white;
+}
+
+.split {
+    background-color: #0F212E;
+    padding: 1px 0px;
+}
+
+.total-question:hover {
+    color: white;
+    font-weight: bolder;
+}
+.total-question {
+    color: rgb(177, 186, 211);
+    text-align: center;
+    font-weight: bold;
+}
+.all-item {
+    display: none;
+}

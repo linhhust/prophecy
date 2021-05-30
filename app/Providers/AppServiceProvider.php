@@ -7,7 +7,8 @@ use View;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
 use App\GeneralSettings;
-
+use DB;
+use Log;
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -31,9 +32,17 @@ class AppServiceProvider extends ServiceProvider
 
         $data['basic'] =   GeneralSettings::first();
         $_ENV['admin'] =  $data['basic']->prefix;
-        $data['tournaments'] = Event::where('status',1)->get();
+        $data['tournaments'] = Event::with(['matches'])->where('status',1)->get();
 
 
         view::share($data);
+        // DB::listen(function ($query) {
+        //     Log::info(
+        //         $query->sql,
+        //         $query->bindings,
+        //         $query->time
+        //     );
+        // });
+
     }
 }

@@ -45,7 +45,7 @@
                                     <div class="form-element">
                                         <button type="submit" class="btn btn-block"><span>@lang('Sign In')</span></button>
                                     </div>
-                                    <a href="{{route('password.request')}}">@lang('Forget Password')</a>
+                                    <a class="text-decoration-none" href="{{route('password.request')}}">@lang('Forget Password')</a>
                                 </div>
                             </div>
                         </form>
