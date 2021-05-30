@@ -9,6 +9,7 @@ use Illuminate\Support\ServiceProvider;
 use App\GeneralSettings;
 use DB;
 use Log;
+
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -29,7 +30,6 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Schema::defaultStringLength(191);
-
         $data['basic'] =   GeneralSettings::first();
         $_ENV['admin'] =  $data['basic']->prefix;
         $data['tournaments'] = Event::with(['matches'])->where('status',1)->get();

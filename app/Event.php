@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Carbon\Carbon;
 
 class Event extends Model
 {
@@ -16,7 +17,8 @@ class Event extends Model
     }
     public  function  matches()
     {
-        return $this->hasMany('App\Match');
+        $now = Carbon::now();
+        return $this->hasMany('App\Match')->where('end_date','>', $now)->orderBy('start_date','asc');
     }
 
 }
