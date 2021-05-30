@@ -1,5 +1,19 @@
 var channel_update_option = pusher.subscribe('update-option');
 var channel_user_prediction = pusher.subscribe('user-prediction');
+var channel_change_match = pusher.subscribe('change-match');
+var channel_text = pusher.subscribe('change-text');
+
+channel_change_match.bind('App\\Events\\ChangeMatch', function(data) {
+    console.log(data);
+    var match = $(`.match_${data.match_id}`)
+    if (match != undefined){
+        $(match).find('.live-match').removeClass('live');
+        if (data.status == 1){
+            $(match).find('.live-match').addClass('live');
+        }
+        $(match).find('.text').text(data.text);
+    }
+});
 
 channel_update_option.bind('App\\Events\\UpdateOption', function(data) {
     var option = $(`.bet_option_${data.option.id}`)

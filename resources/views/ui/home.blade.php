@@ -150,7 +150,7 @@
             <div class="row ">
                 @include('errors.error')
                 @foreach($matches as $match)
-                    <div class="col-lg-12 mb-3">
+                    <div class="col-lg-12 mb-3 match_{{$match->id}}">
                         <!-- Heading Component-->
                         <article class="heading-component ">
                             <div class="heading-component-inner">
@@ -161,10 +161,16 @@
                         </article>
 
                         <div class="sport-table-header">
-                            <p>{{$match->name}}
-                                <span class="float-right site-color countdown "  id="counter{{$match->id}}" ></span>
+                            <p class="left">
+                                <span>{{$match->name}}</span>
+                                <span class="live-match {{$match->is_live == 1 ? 'live' : ''}}">Live</span>
+                            </p>
+                            <p class="right">
+                                <span class="text">{{$match->text}}</span>
+                                <span class="float-right site-color countdown"  id="counter{{$match->id}}" ></span>
                             </p>
                             <script>createCountDown('counter<?php echo $match->id ?>', {{\Carbon\Carbon::parse($match->end_date)->diffInSeconds()}});</script>
+
                         </div>
 
                         @php

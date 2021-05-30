@@ -64,6 +64,26 @@
                                     </div>
                                 </div>
 
+                                <div class="form-group row">
+                                    <label for="eventName" class="col-sm-3 col-form-label"><strong>Live</strong></label>
+                                    <div class="col-sm-9">
+
+                                        <input type="checkbox" name="is_live" data-toggle="toggle" data-on="<i class='fa fa-eye'></i> Enabled" data-off="<i class='fa fa-eye-slash'></i> Disabled" data-onstyle="primary" data-offstyle="danger">
+                                    </div>
+
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="eventName" class="col-sm-3 col-form-label"><strong>Event Text</strong></label>
+                                    <div class="col-sm-9">
+                                        <input type="text" name="text" class="form-control" id="eventText"
+                                               placeholder="Event Text">
+                                        @if ($errors->has('text'))
+                                            <p class="text-danger">{{ $errors->first('text') }}</p>
+                                        @endif
+                                    </div>
+                                </div>
+
 
                                 <div class="form-group row">
                                     <label for="eventName" class="col-sm-3 col-form-label"><strong>Start Date & Time</strong></label>

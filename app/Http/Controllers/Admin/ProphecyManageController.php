@@ -17,6 +17,8 @@ use App\Event;
 use Illuminate\Support\Facades\Auth;
 use App\Events\UpdateOption;
 use Log;
+use App\Events\ChangeMatch;
+
 class ProphecyManageController extends Controller
 {
 
@@ -98,7 +100,7 @@ class ProphecyManageController extends Controller
             'start_date' => 'required',
             'end_date' => 'required',
         ], [
-            'event_id.required' => 'Tournament must  be selected',
+            'event_id.required' => 'Tournament must be selected',
             'name.required' => 'Event must not be empty',
             'start_date.required' => 'Event start date must not be empty',
             'end_date.required' => 'Event end date must not be empty',
@@ -109,9 +111,11 @@ class ProphecyManageController extends Controller
         $start_date = $request->start_date . ' ' . $request->start_time;
         $end_date = $request->end_date . ' ' . $request->end_time;
         $in['slug'] = str_slug($request->name);
+        $in['text'] = $request->text;
         $in['start_date'] = Carbon::parse($start_date);
         $in['end_date'] = Carbon::parse($end_date);
         $in['status'] = $request->status == 'on' ? '1' : '0';
+        $in['is_live'] = $request->is_live == 'on' ? '1' : '0';
         $in['admin_id'] = Auth::guard('admin')->id();
         Match::create($in);
 
@@ -151,9 +155,11 @@ class ProphecyManageController extends Controller
         $in['slug'] = str_slug($request->name);
         $in['start_date'] = Carbon::parse($start_date);
         $in['end_date'] = Carbon::parse($end_date);
+        $in['text'] = $request->text;
         $in['status'] = $request->status == 'on' ? '1' : '0';
+        $in['is_live'] = $request->is_live == 'on' ? '1' : '0';
         $data->fill($in)->save();
-
+        event(new ChangeMatch($request->id, $in['status'], $in['text']));
         session()->flash('success', 'Event Update Successfully!');
         return back();
     }
