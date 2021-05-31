@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col-lg-12 text-center">
                 <div class="breadcrumb-txt">
-                    <h1>{{$page_title}}</h1>
+                    {{-- <h1>{{$page_title}}</h1> --}}
                 </div>
             </div>
         </div>

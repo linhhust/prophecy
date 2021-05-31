@@ -477,6 +477,7 @@ Modal CSS
     -webkit-box-align: center;
     align-items: center;
     position: relative;
+    justify-content: center;
 }
 svg:not(:root) {
     overflow: hidden;
@@ -613,4 +614,13 @@ svg:not(:root) {
     color: rgb(199, 138, 0);
     text-transform: none;
     border: none;
+}
+
+.layout-left {
+    width: 240px;
+}
+
+.main {
+    width: 1000px;
+    /*margin-right: 12px;*/
 }

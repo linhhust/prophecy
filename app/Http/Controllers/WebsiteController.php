@@ -23,37 +23,39 @@ use Illuminate\Support\Facades\DB;
 class WebsiteController extends Controller
 {
     public function index(){
-        $now = Carbon::now();
-        $data['page_title'] = "Home";
-        $data['sliders'] = Slider::latest()->get();
-        $data['matches'] = Match::with('event')->whereStatus(1)->where('status', '!=' ,2)->where('end_date','>', $now)->orderBy('start_date','asc')->where('event_id',function($query){
-               $query->select('id')->from('events')->orderBy('id', 'asc')->first();
-            })->limit(10)->get();
+        // $now = Carbon::now();
+        // $data['page_title'] = "Home";
+        // $data['sliders'] = Slider::latest()->get();
+        // $data['matches'] = Match::with('event')->whereStatus(1)->where('status', '!=' ,2)->where('end_date','>', $now)->orderBy('start_date','asc')->where('event_id',function($query){
+        //        $query->select('id')->from('events')->orderBy('id', 'asc')->first();
+        //     })->limit(10)->get();
 
-        $data['users'] = User::count();
-        $data['totalPrediction'] = BetInvest::count();
-        $data['gateway'] = GatewayCurrency::where('status',1)->get();
-        $data['withdraw'] = WithdrawMethod::where('status',1)->count();
+        // $data['users'] = User::count();
+        // $data['totalPrediction'] = BetInvest::count();
+        // $data['gateway'] = GatewayCurrency::where('status',1)->get();
+        // $data['withdraw'] = WithdrawMethod::where('status',1)->count();
 
-        $data['howItWork'] = HowItWork::get();
-        $data['testimonials'] = Testimonial::latest()->get();
-        $data['blogs'] = Blog::orderBy('id','desc')->limit(4)->get();
+        // $data['howItWork'] = HowItWork::get();
+        // $data['testimonials'] = Testimonial::latest()->get();
+        // $data['blogs'] = Blog::orderBy('id','desc')->limit(4)->get();
 
-        $date = Carbon::today()->subDays(7);
+        // $date = Carbon::today()->subDays(7);
 
-        $weeklyLeader = BetInvest::with('user')->where('created_at', '>=', $date)->where('status','!=',2)->groupBy('user_id')
-            ->select('user_id', DB::raw('count(*) as total_predictions'),  DB::raw('sum(invest_amount) as investAmount'))
-            ->limit(5)
-            ->orderBy('investAmount','desc')
-            ->get();
+        // $weeklyLeader = BetInvest::with('user')->where('created_at', '>=', $date)->where('status','!=',2)->groupBy('user_id')
+        //     ->select('user_id', DB::raw('count(*) as total_predictions'),  DB::raw('sum(invest_amount) as investAmount'))
+        //     ->limit(5)
+        //     ->orderBy('investAmount','desc')
+        //     ->get();
 
-        $leader = BetInvest::with('user')->where('status','!=',2)->groupBy('user_id')
-            ->select('user_id', DB::raw('count(*) as total_predictions'),  DB::raw('sum(invest_amount) as investAmount'))
-            ->orderBy('investAmount','desc')
-            ->limit(5)
-            ->get();
+        // $leader = BetInvest::with('user')->where('status','!=',2)->groupBy('user_id')
+        //     ->select('user_id', DB::raw('count(*) as total_predictions'),  DB::raw('sum(invest_amount) as investAmount'))
+        //     ->orderBy('investAmount','desc')
+        //     ->limit(5)
+        //     ->get();
 
-        return view('ui.home',$data,compact('weeklyLeader','leader'));
+        // return view('ui.home',$data,compact('weeklyLeader','leader'));
+        $event = Event::firstOrFail();
+        return $this->tournament($event->name, $event->id);
     }
     public function tournament($name = null, $id){
         $now = Carbon::now();

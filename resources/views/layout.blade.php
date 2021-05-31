@@ -54,15 +54,17 @@
     <!--  Navbar Area Start  -->
     <div class="nav-area">
         <div class="main-menu">
-            <div class="container">
-                <div class="row align-items-center position-relative">
+            {{-- <div class="container"> --}}
+                <div class="d-flex flex-row">
+                <div class="layout-left"></div>
+                <div class="main row align-items-center position-relative">
                     <div class="col-lg-3 col-6">
                         <a class="logo-wrapper" href="{{route('site')}}"><img src="{{asset('public/images/logo/logo.png')}}" alt=""></a>
                     </div>
                     <div class="col-lg-9 col-6 position-static">
                         <nav>
                             <ul class="menus" id="mainMenu">
-                                <li @if(Request::routeIs('site')) class="active" @endif><a href="{{route('site')}}" class="parent-link">@lang('Home')</a></li>
+                                {{-- <li @if(Request::routeIs('site')) class="active" @endif><a href="{{route('site')}}" class="parent-link">@lang('Home')</a></li> --}}
 
                                 {{-- <li class="dropdown">
                                     <a href="javascript:void(0)" class="parent-link">@lang('Tournament')</a>
@@ -77,8 +79,8 @@
                                 <li @if(Request::routeIs('about')) class="active" @endif><a href="{{route('about')}}" class="parent-link">@lang('About Us')</a></li>
                                 <li @if(Request::routeIs('blog')) class="active" @endif><a href="{{route('blog')}}" class="parent-link">@lang('Blog')</a></li>
 
-                                <li @if(Request::routeIs('faq')) class="active" @endif><a href="{{route('faq')}}" class="parent-link">@lang('FAQS')</a></li>
-                                <li @if(Request::routeIs('contact')) class="active" @endif><a href="{{route('contact')}}" class="parent-link">@lang('Contact Us')</a></li>
+                                {{-- <li @if(Request::routeIs('faq')) class="active" @endif><a href="{{route('faq')}}" class="parent-link">@lang('FAQS')</a></li>
+                                <li @if(Request::routeIs('contact')) class="active" @endif><a href="{{route('contact')}}" class="parent-link">@lang('Contact Us')</a></li> --}}
 
 
                                 @guest
@@ -114,15 +116,21 @@
                         </nav>
                     </div>
                 </div>
-            </div>
+                <div class="layout-left"></div>
+                </div>
+            {{-- </div> --}}
         </div>
     </div>
     <!--  Navbar Area End  -->
 </div>
 <!--  Header Section End  -->
-
-@yield('content')
-
+<div class="d-flex flex-row">
+    <div class="layout-left"></div>
+    <div class="main">
+        @yield('content')
+    </div>
+    <div class="layout-left"></div>
+</div>
 @include('partials.footer')
 
 <!-- back to top area start -->

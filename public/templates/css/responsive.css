@@ -10,7 +10,7 @@
     }
 
     .nav-area .main-menu {
-        padding: 0px 16px 0px 18px;
+        /*padding: 0px 16px 0px 18px;*/
     }
 
     .home-2 .nav-area ul.menus li.dropdown a {
@@ -235,6 +235,12 @@
 }
 
 @media only screen and (max-width: 991px) {
+    .layout-left {
+        display: none;
+    }
+    .main {
+        width: 100%;
+    }
     .support-area {
         display: none;
     }

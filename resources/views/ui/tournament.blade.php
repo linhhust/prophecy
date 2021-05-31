@@ -27,7 +27,8 @@
 @include('partials.breadcrumb')
 @php
     $arr = explode('/',url()->current());
-    $id = $arr[count($arr) - 1];
+    $event = App\Event::firstOrFail();
+    $id = count($arr) < 4 ? $event->id : $arr[count($arr) - 1];
 @endphp
     <!--  Tournament Start  -->
     <div class="vehicles-area home-2" {{-- style="margin-top:15px;" --}}>
@@ -355,11 +356,11 @@
     <!--    Call to Action Area Start    -->
     <div class="cta-area cta-bg">
         <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-10">
+            <div class="d-flex flex-row align-items-center justify-content-around">
+                <div>
                     <h2>@lang('We Are Here To Help You Needs')</h2>
                 </div>
-                <div class="col-lg-2">
+                <div>
                     <a href="{{route('contact')}}" class="cartbtn cart">@lang('Contact Us')</a>
                 </div>
             </div>
