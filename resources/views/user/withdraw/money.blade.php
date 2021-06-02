@@ -1,7 +1,7 @@
 @extends('user')
 
 @section('css')
-
+    <link rel="stylesheet" href="{{asset('public/templates/css/custom.css')}}">
 @stop
 @section('content')
 
@@ -37,7 +37,7 @@
                                    <img src="{{asset('public/images/withdraw/'. $data->image)}}" class="card-img-top w-100p" alt="{{$data->name}}" >
 
                                </div>
-                               <div class="card-footer custom-footer">
+                               <div class="card-footer">
                                    <button type="button"  data-id="{{$data->id}}" data-resource="{{$data}}"
                                       data-min_amount="{{formatter_money($data->withdraw_min)}}"
                                       data-max_amount="{{formatter_money($data->withdraw_max)}}"

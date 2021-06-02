@@ -18,7 +18,7 @@
     <!-- bootstrap css -->
     <link rel="stylesheet" href="{{asset('public/templates/css/file.min.css')}}">
     @yield('load-css')
-
+    <link rel="stylesheet" href="{{asset('public/templates/css/custom.css')}}">
     @yield('css')
     <!-- responsive css -->
     <link rel="stylesheet" href="{{asset('public/templates/css/responsive.css')}}">

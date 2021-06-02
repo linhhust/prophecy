@@ -13,14 +13,14 @@
 .table-custom .table td, .table-custom .table th {
     padding: 15px 3px 15px 3px;
     vertical-align: top;
-    border-top: 1px solid #dee2e6;
+    /*border-top: 1px solid #dee2e6;*/
 }
 .result-table-header {
     padding-top: 8px;
     padding-bottom: 8px;
     letter-spacing: 0.05em;
     color: #fff;
-    background-color: #130e3e;
+    background-color: #071824;
 }
 .result-table-header th{
 }
@@ -28,13 +28,14 @@
 .result-table-tr {
     padding-top: 20px;
     padding-bottom: 20px;
-    border-left: 1px solid #e1e1e1;
+    /*border-left: 1px solid #e1e1e1;
     border-right: 1px solid #e1e1e1;
-    border-bottom: 1px solid #e1e1e1;
+    border-bottom: 1px solid #e1e1e1;*/
+    color: white;
 }
 .table-striped tbody tr:nth-of-type(odd) {
-    background-color: #f2f2f2;
+    background-color: #213743;
 }
 .table-striped tbody tr:nth-of-type(even) {
-    background-color: #fff;
+    background-color: #2E4149;
 }

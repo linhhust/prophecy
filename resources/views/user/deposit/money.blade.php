@@ -2,6 +2,7 @@
 
 @section('css')
     <link rel="stylesheet" href="{{asset('public/templates/css/deposit.css')}}">
+    <link rel="stylesheet" href="{{asset('public/templates/css/custom.css')}}">
 @stop
 @section('content')
     <style>
@@ -19,7 +20,7 @@
 
                 <div class="col-md-12 mb-4">
 
-                    <div class="panel-body bg-white" >
+                    <div class="panel-body" >
                         <h4 class="title">@lang('DEPOSIT')</h4>
 
                         <div class="row">

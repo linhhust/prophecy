@@ -2,6 +2,7 @@
 
 @section('css')
     <link rel="stylesheet" href="{{asset('public/templates/css/intlTelInput.css')}}">
+    <link rel="stylesheet" href="{{asset('public/templates/css/custom.css')}}">
 @stop
 
 @section('content')

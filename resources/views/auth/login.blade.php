@@ -1,5 +1,7 @@
 @extends('layout')
-
+@section('css')
+    <link rel="stylesheet" href="{{asset('public/templates/css/custom.css')}}">
+@stop
 @section('content')
     @include('partials.breadcrumb')
 
